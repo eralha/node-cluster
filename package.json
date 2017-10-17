@@ -1,0 +1,13 @@
+{
+  "name": "er-clx-sms",
+  "version": "0.1.0",
+  "scripts": {
+    "start": "node web.js"
+  },
+  "dependencies": {
+    "express": "*"
+  },
+  "engines": {
+    "node": "0.12.2"
+  }
+}
