@@ -3,7 +3,7 @@ var cluster = require('cluster');
 
 if (cluster.isMaster) {
 
-    var numWorkers = require('os').cpus().length;
+    var numWorkers = require('os').cpus().length - 1;
 
     console.log('Master cluster setting up ' + numWorkers + ' workers...');
 
@@ -32,8 +32,7 @@ if (cluster.isMaster) {
     //WORKER CODE, this code will be executed in a worker thread
     app.get('/', function(request, response) {
 
-      console.log(cluster);
-
+      console.log('process ' + process.pid + ' says hello!');
       response.send('process ' + process.pid + ' says hello!');
 
     }).listen(port, function () {
